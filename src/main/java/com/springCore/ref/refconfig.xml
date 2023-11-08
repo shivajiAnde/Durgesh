@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+
+	<!-- <bean id="B" class="com.springCore.ref.B" >
+		<property name="y" value="60"></property>
+	</bean> -->
+	
+	<bean id="B" class="com.springCore.ref.B" p:y="50" />
+		
+	<!-- <bean id="A" class="com.springCore.ref.A">
+		<property name="x" value="30" />
+		<property name="b">
+		<ref bean="B"/>
+		</property>
+	</bean> -->
+	
+	<bean id="A" class="com.springCore.ref.A" p:x="10" p:b-ref="B" />
+	
+	<!-- <bean id="address" class="com.springCore.ref.Address">
+	<property name="village" value="mydukur" />
+	<property name="pincode" value="156172" />
+	</bean> -->
+	
+	<bean id="address" class="com.springCore.ref.Address" scope="prototype" p:village="sri ram nagar" p:pincode="156172"/>
+	
+	<bean id="student" class="com.springCore.ref.Student" p:name="sandeep" p:age="20" p:address-ref="address"/>
+	
+	
+	<!-- <bean id="student" class="com.springCore.ref.Student">
+		<property name="name" value="shivaji" />
+		<property name="age" value="23" />
+		<property name="Address">
+		<ref bean="address"/>
+		</property>
+	</bean> -->
+ </beans>

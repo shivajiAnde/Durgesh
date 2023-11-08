@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+	 <bean class="com.spring.annota.Marks" name="marks" >
+	<property name="subject" value="maths" />
+	<property name="marks" value="75" />
+	</bean>
+
+	 <bean name="marks1" class="com.spring.annota.Marks">
+	<property name="subject" value="science" />
+	<property name="marks" value="100" />
+	</bean> 
+
+	<bean name="student1" class="com.spring.annota.StudentType" />
+	
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+	
+
+ </beans>

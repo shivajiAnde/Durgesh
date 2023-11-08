@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd
+ ">
+ 	
+ 	<!-- standalone-List -->
+ 	
+ 	
+ 	<util:list list-class="java.util.ArrayList" id="friends">
+ 		<value>"shivaji"</value>
+ 		<value>"sreenu"</value>
+ 		<value>"hari"</value>
+ 		<value>"nitish"</value>
+ 	</util:list>
+ 	
+ 	<!-- standalone-Map -->
+ 	<util:map map-class="java.util.HashMap" id="feeStructures">
+ 		<entry key="java" value="8000" />
+ 		<entry key="python" value="5000" />
+ 		<entry key="c" value="3000" />
+ 	</util:map>
+ 	
+ 	
+ 	<!-- standalone-Properties -->
+ 	
+ 	
+ 	<util:properties id="properties">
+ 		<prop key="driver">com.mysql.cj.jdbc.Driver</prop>
+ 		<prop key="url">jdbc:mysql//localhost:3306/shivaji</prop>
+ 	</util:properties>
+ 	
+ 	
+	<bean name="person" class="com.springCore.StandaloneCollections.Person">
+		<property name="frnds">
+			<ref bean="friends"/>
+		</property>
+		<property name="feeStructure" ref="feeStructures" />
+		<property name="properties" ref="properties" />
+	</bean>	
+
+ </beans>
